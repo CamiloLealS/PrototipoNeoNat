@@ -1,0 +1,98 @@
+{% extends 'core/base.html' %}
+
+{% block menu-lateral %}
+    <h2>Menú:</h2>
+    <ul>
+        <li><a href="{% url 'coordinadoraHome' %}">Inventario</a></li>
+        <li><a href="{% url 'coordinadoraTraslados' %}">Traslados</a></li>
+        <li><a href="{% url 'coordinadoraPrestamos' %}">Préstamos</a></li>
+    </ul>
+
+{% endblock menu-lateral %}
+
+{% block content %}
+<section class="container-traslado">
+    <form action="" method="post">
+        {%csrf_token%}
+        <input type="hidden" name="csrfmiddlewaretoken" value="Kgjn143ahPUNhItDVP9xOHqc1X3hH4AgrvT5tj8EZfLh2DecZsiznhobKqYllC9m">
+        
+        <label for="id_id_traslado">Id traslado:</label>
+        
+          
+          <input type="number" name="id_traslado" required="" id="id_id_traslado">
+          
+          
+        
+      
+    
+      
+        <label for="id_razon">Razon:</label>
+        
+          
+          <input type="text" name="razon" required="" id="id_razon">
+          
+          
+        
+      
+    
+      
+        <label for="id_fecha_traslado">Fecha traslado:</label>
+        
+          
+          <input type="text" name="fecha_traslado" required="" id="id_fecha_traslado">
+          
+          
+        
+      
+    
+      
+        <label for="id_fecha_devolucion">Fecha devolucion:</label>
+        
+          
+          <input type="text" name="fecha_devolucion" required="" id="id_fecha_devolucion">
+          
+          
+        
+      
+    
+      
+        <label for="id_id_equipo">Id equipo:</label>
+        
+          
+          <select name="id_equipo" required="" id="id_id_equipo">
+      <option value="" selected="">---------</option>
+    
+      <option value="1">Ventilador 1</option>
+    
+      <option value="2">Incubadora 2</option>
+    
+      <option value="3">Bomba de infusión 3</option>
+    
+      <option value="4">EEG 4</option>
+    
+    </select>
+          
+          
+        
+      
+    
+      
+        <label for="id_id_matrona">Id matrona:</label>
+        
+          
+          <select name="id_matrona" required="" id="id_id_matrona">
+      <option value="" selected="">---------</option>
+    
+      <option value="100">Matrona Clínica Maria Perez 100</option>
+    
+    </select>
+          
+          
+            
+          
+        
+      
+        <button type="submit">Registrar Traslado</button>
+    </form>
+</section>
+{% endblock content %}

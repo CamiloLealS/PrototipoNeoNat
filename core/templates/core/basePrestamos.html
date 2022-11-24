@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Prestamos{% endblock title %}
+
+{% block menu-lateral %}
+    <h2>Menú:</h2>
+    <ul>
+        <li><a href="{% url 'clinicaHome' %}">Inventario</a></li>
+        <li><a href="{% url 'clinicaTraslados' %}">Traslados</a></li>
+        <li><a href="{% url 'clinicaPrestamos' %}">Préstamos</a></li>
+    </ul>
+
+{% endblock menu-lateral %}
+
+{% block content %}
+<section class="container-tabla">
+    <form method="get">
+        <div class="container" id="tabla">
+            <section id="buscar">
+                <input type="text" placeholder="Buscar equipo" name="buscar" value="{{request.GET.buscar}}">
+                <button type="submit" class="btn btn-outline-dark">Buscar</button>
+            </section>
+            <table class="table" >
+                <thead id="header-tabla">
+                    <tr>
+                        <th scope="col">ID Prestamo</th>
+                        <th scope="col">ID Equipo</th>
+                        <th scope="col">Fecha Emisión</th>
+                        <th scope="col">Fecha devolución</th>
+                        <th scope="col">Hospital Destino</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in prestamo %}
+                        <tr>
+                            <th scope="row" id="id-equipo">{{i.id_prestamo}}</th>
+                            <td>{{i.id_equipo}}</td>
+                            <td>{{i.fecha_emision}}</td>
+                            <td>{{i.fecha_devolucion}}</td>
+                            <td>{{i.hospital_destino}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <button class="btn btn-outline-dark" id="btn-admin"><a href="{% url 'admin:index' %}">Admin site</a> </button>
+    <button class="btn btn-outline-dark"><a href="{% url 'registrarPrestamo' %}">Registrar Prestamo</a></button>
+{% endblock content %}

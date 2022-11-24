@@ -1,0 +1,142 @@
+{% extends 'core/base.html' %}
+
+{% block menu-lateral %}
+    <h2>Menú:</h2>
+    <ul>
+        <li><a href="{% url 'coordinadoraHome' %}">Inventario</a></li>
+        <li><a href="{% url 'coordinadoraTraslados' %}">Traslados</a></li>
+        <li><a href="{% url 'coordinadoraPrestamos' %}">Préstamos</a></li>
+    </ul>
+
+{% endblock menu-lateral %}
+
+{% block content %}
+<section class="container-registro">
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="csrfmiddlewaretoken" value="Ra12dXAZrfiSsILmsTCqhs9O7MZq8ZCUypBKFcFt9F9mdDwVwwLsQ27NQfUuMxb0">
+        
+        <label for="id_id_equipo">Id equipo:</label>
+        
+          <input type="number" name="id_equipo" required="" id="id_id_equipo">
+          
+          
+        
+      
+    
+      
+        <label for="id_numero_serie">Numero serie:</label>
+        
+          <input type="number" name="numero_serie" required="" id="id_numero_serie">
+          
+          
+        
+      
+    
+      
+        <label for="id_tipo_equipo">Tipo equipo:</label>
+        
+          <select name="tipo_equipo" id="id_tipo_equipo">
+      <option value="Elige el tipo de equipo">Elige el tipo de equipo</option>
+    
+      <option value="Ventilador">Ventilador</option>
+    
+      <option value="Incubadora">Incubadora</option>
+    
+      <option value="Bomba de infusión">Bomba de Infusión</option>
+    
+      <option value="Capnógrafo">Capnógrafo</option>
+    
+      <option value="EEG">EEG</option>
+    
+      <option value="EKG">EKG</option>
+    
+      <option value="Saturómetro">Saturómetro</option>
+    
+      <option value="Bomba de jeringas">Bomba de jeringas</option>
+    
+    </select>
+          
+          
+        
+      
+    
+      
+        <label for="id_descripcion">Descripcion:</label>
+          <input type="text" name="descripcion" required="" id="id_descripcion">
+          
+          
+        
+      
+    
+      
+        <label for="id_marca">Marca:</label>
+        
+          <input type="text" name="marca" required="" id="id_marca">
+          
+          
+        
+      
+    
+      
+        <label for="id_condicion">Condicion:</label>
+        
+          <select name="condicion" id="id_condicion">
+      <option value="Buen estado">Buen estado</option>
+    
+      <option value="Requiere mantenimiento">Requiere mantenimiento</option>
+    
+      <option value="No utilizable">No utilizable</option>
+    
+    </select>
+          
+          
+        
+      
+    
+      
+        <label for="id_estado">Estado:</label>
+        
+          <select name="estado" id="id_estado">
+      <option value="Disponible">Disponible</option>
+    
+      <option value="En cupo">En cupo</option>
+    
+      <option value="En mantenimiento">En mantenimiento</option>
+    
+      <option value="En préstamo">En préstamo</option>
+    
+    </select>
+          
+          
+        
+      
+    
+      
+        <label for="id_fecha_mantencion">Fecha mantencion:</label>
+        
+          <input type="text" name="fecha_mantencion" required="" id="id_fecha_mantencion">
+          
+          
+        
+      
+    
+      
+        <label for="id_id_matrona">Id matrona:</label>
+        
+          <select name="id_matrona" required="" id="id_id_matrona">
+      <option value="" selected="">---------</option>
+    
+      <option value="10">Matrona Coordinadora Juana Rodriguez 10</option>
+    
+    </select>
+          
+          
+            
+          
+        
+      
+        <button type="submit">Registrar Equipo</button>
+    </form>
+</section>
+{% endblock content %}

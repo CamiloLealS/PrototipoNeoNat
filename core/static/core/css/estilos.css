@@ -1,0 +1,141 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+}
+
+#top{
+    height: 170px;
+    width: 990px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    position: relative;
+}
+
+body{
+    background-color: aliceblue;
+}
+
+.container-general{
+    display: flex;
+    width: 990px;
+    margin: auto;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(214, 214, 214, 0.333);
+}
+
+.menu-lateral{
+    width: 300px;
+    height: auto;
+    justify-content: left;
+    display: block;
+    background-color: white;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(214, 214, 214, 0.333);
+}
+
+
+ #sign_in_button {
+    border-radius: 15px;
+    padding: 12px;
+    border: 0;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1;
+    font-family: inherit;
+    width: 100%;
+    justify-content: center;
+    margin-top: 8px;
+    background-color: #f90;
+}
+
+input[type=text]:not(.basic),
+input[type=tel]:not(.basic),
+input[type=email]:not(.basic),
+input[type=password]:not(.basic),
+select:not(.basic),
+textarea:not(.basic) {
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border: 1px solid #ccc;
+    display: inline-block;
+    font-size: 17px;
+    padding: 12px 16px;
+    width: 210px;
+    margin-left: 40px;
+}
+input[type=text]:focus:not(.basic),
+input[type=tel]:focus:not(.basic),
+input[type=email]:focus:not(.basic),
+input[type=password]:focus:not(.basic),
+select:focus:not(.basic),
+textarea:focus:not(.basic) {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px hsla(33, 99%, 55%, 0.382);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px hsla(33, 99%, 55%, 0.382);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px hsla(33, 99%, 55%, 0.382);
+    border-color: #fe9c2c;
+    outline: none;
+}
+input[type=text].error:not(.basic),
+input[type=tel].error:not(.basic),
+input[type=email].error:not(.basic),
+input[type=password].error:not(.basic),
+select.error:not(.basic),
+textarea.error:not(.basic) { border-color: #f90 !important }
+input[type=text].error:focus:not(.basic),
+input[type=tel].error:focus:not(.basic),
+input[type=email].error:focus:not(.basic),
+input[type=password].error:focus:not(.basic),
+select.error:focus:not(.basic),
+textarea.error:focus:not(.basic) {
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(255,153,0,0.4);
+    -moz-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(255,153,0,0.4);
+    -webkit-box-shadow: inset 0 1px 3px rgba(0,0,0,0.1),0 0 8px rgba(255,153,0,0.4);
+    border-color: #f90;
+}
+
+#login_form h1 {
+    margin-bottom: 7px;
+    font-size: 30px;
+    text-align: center;
+}
+
+
+.botones-prueba{
+    border-radius: 15px;
+    display: flex;
+    padding: 5px;
+    margin: 5px;
+}
+
+#tabla{
+    margin-top: 5px;
+}
+
+#buscar{
+    display: flex;
+    width: 40%;
+}
+
+.container-content{
+    width: 990px;
+    display: flex;
+    flex-direction: column  ;
+}
+
+.container-tabla > #btn-admin{
+    margin: 10px;
+}
+
+li{
+    list-style: none;
+}
+
+form{
+    display: block;
+}

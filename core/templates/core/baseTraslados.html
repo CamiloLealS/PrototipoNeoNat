@@ -1,0 +1,49 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Traslados{% endblock title %}
+
+{% block menu-lateral %}
+    <h2>Menú:</h2>
+    <ul>
+        <li><a href="{% url 'clinicaHome' %}">Inventario</a></li>
+        <li><a href="{% url 'clinicaTraslados' %}">Traslados</a></li>
+        <li><a href="{% url 'clinicaPrestamos' %}">Préstamos</a></li>
+    </ul>
+
+{% endblock menu-lateral %}
+
+{% block content %}
+<section class="container-tabla">
+    <form method="get">
+        <div class="container" id="tabla">
+            <section id="buscar">
+                <input type="text" placeholder="Buscar equipo" name="buscar" value="{{request.GET.buscar}}">
+                <button type="submit" class="btn btn-outline-dark">Buscar</button>
+            </section>
+            <table class="table" >
+                <thead id="header-tabla">
+                    <tr>
+                        <th scope="col">ID Traslado</th>
+                        <th scope="col">ID Equipo</th>
+                        <th scope="col">Fecha Traslado</th>
+                        <th scope="col">Fecha Devolución</th>
+                        <th scope="col">ID matrona</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for i in traslado %}
+                        <tr>
+                            <th scope="row" id="id-equipo">{{i.id_traslado}}</th>
+                            <td>{{i.id_equipo}}</td>
+                            <td>{{i.fecha_traslado}}</td>
+                            <td>{{i.fecha_devolucion}}</td>
+                            <td>{{i.id_matrona}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </form>
+    <button class="btn btn-outline-dark" id="btn-admin"><a href="{% url 'admin:index' %}">Admin site</a> </button>
+    <button class="btn btn-outline-dark"><a href="{% url 'registrarTraslado' %}">Registrar Traslado</a></button>
+{% endblock content %}
