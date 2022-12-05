@@ -28,5 +28,6 @@ urlpatterns = [
     path('coordinadoraTraslados/', views.traslados, name="coordinadoraTraslados"),
     path('nuevoEquipo/', views.registrarEquipo, name="registrarEquipo"),
     path('nuevoPrestamo/', views.registrarPrestamo, name="registrarPrestamo"),
-    path('nuevoTraslado/', views.registrarTraslado, name="registrarTraslado")
+    path('nuevoTraslado/', views.registrarTraslado, name="registrarTraslado"),
+    path('<int:id>/update/', views.updateEquipo, name="updateEquipo")
 ]
