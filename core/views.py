@@ -14,9 +14,10 @@ def homeInventario(request):
     equipo =equipo_medico.objects.all()
 
     busqueda = request.GET.get("buscar")
+    por_tipo = request.GET.get("buscar-tipo")
 
     if busqueda:
-        equipo = equipo_medico.objects.filter(Q(id_equipo = busqueda)).distinct()
+        equipo = equipo_medico.objects.filter(Q(id_equipo = busqueda)|Q(tipo_equipo = por_tipo)).distinct()
 
     return render(request, 'core/baseHome.html', {'equipo':equipo})
 
@@ -89,3 +90,17 @@ def registrarPrestamo(request):
         print('invalido')
     
     return render(request, 'core/nuevoPrestamo.html', {'form':form})
+
+
+def updateEquipo(request, id):
+    equipo = equipo_medico.objects.get(id_equipo=id)
+    form = nuevoEquipoForm(request.POST, instance=equipo)
+
+    if form.is_valid():
+        form.save()
+
+        return redirect(to='clinicaHome')
+    else:
+        form = nuevoEquipoForm(instance=equipo)
+
+    return render(request, 'core/updateEquipo.html',{'form':form})

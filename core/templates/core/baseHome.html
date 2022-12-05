@@ -18,6 +18,17 @@
 <form method="get">
     <div class="container" id="tabla">
         <section id="buscar">
+            <select name="buscar-tipo">
+                <option value="Elige un tipo de equipo">Elige tipo de equipo</option>
+                <option value="Ventilador">Ventilador</option>
+                <option value="Incubadora">Incubadora</option>
+                <option value="Bomba de infusión">Bomba de infusión</option>
+                <option value="Capnógrafo">Capnógrafo</option>
+                <option value="EEG">EEG</option>
+                <option value="EKG">EKG</option>
+                <option value="Saturómetro">Saturómetro</option>
+                <option value="Bomba de jeringas">Bomba de jeringas</option>
+            </select>
             <input type="text" placeholder="Buscar equipo" name="buscar" value="{{request.GET.buscar}}">
             <button type="submit" class="btn btn-outline-dark">Buscar</button>
         </section>
@@ -29,6 +40,7 @@
                     <th scope="col">Condición</th>
                     <th scope="col">Estado</th>
                     <th scope="col">Fecha mantención</th>
+                    <th scope="col">Actualizar</th>
                 </tr>
             </thead>
             <tbody>
@@ -39,6 +51,7 @@
                         <td>{{i.condicion}}</td>
                         <td>{{i.estado}}</td>
                         <td>{{i.fecha_mantencion}}</td>
+                        <td><button type="submit"><a href="{% url 'updateEquipo' i.id_equipo %}">Actualizar</a></button></td>
                     </tr>
                 {% endfor %}
             </tbody>
